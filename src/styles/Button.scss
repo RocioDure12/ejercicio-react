@@ -1,0 +1,19 @@
+.btns{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .btns button{
+    background: #8e44ad;
+    width: 100%;
+    padding:5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size:15px;
+    color: white;
+    transition: all 0.3s linear;
+    border: none;
+  }
