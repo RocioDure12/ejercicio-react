@@ -84,12 +84,12 @@ const Main=()=>{
         const [busqueda, setBusqueda]=useState("");
 
         useEffect(()=>{
-          fetch(`https://rickandmortyapi.com/api/character${valorDelInput}`)
+          fetch(`https://rickandmortyapi.com/api/character${busqueda}}`)
           .then((res)=>res.json())
           .then((data)=>{
             setPersonajes(data.results);
           });
-        }, [valorDelInput]); 
+        }, [busqueda]); 
 
         const handleChange=(e)=>{
           setValorDelInput(e.target.value)
@@ -104,6 +104,7 @@ const Main=()=>{
       <div>
         <h2>Personaje buscado: {valorDelInput}</h2>
         <input onChange={handleChange}></input>
+        <button onClick={handleClick}>Search</button>
       </div>
         {personajes.map((personaje)=><Card
             title={personaje.name}
