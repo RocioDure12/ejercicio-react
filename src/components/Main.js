@@ -84,7 +84,7 @@ const Main=()=>{
         const [busqueda, setBusqueda]=useState("");
 
         useEffect(()=>{
-          fetch(`https://rickandmortyapi.com/api/character${busqueda}}`)
+          fetch(`https://rickandmortyapi.com/api/character?name=${busqueda}`)
           .then((res)=>res.json())
           .then((data)=>{
             setPersonajes(data.results);
