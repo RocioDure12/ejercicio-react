@@ -82,12 +82,14 @@ const Main=()=>{
         const [personajes, setPersonajes]=useState([]);
         const [valorDelInput, setValorDelInput]=useState("");
         const [busqueda, setBusqueda]=useState("");
+        const [loading, setLoading] = useState(false);
 
         useEffect(()=>{
           fetch(`https://rickandmortyapi.com/api/character?name=${busqueda}`)
           .then((res)=>res.json())
           .then((data)=>{
             setPersonajes(data.results);
+            setLoading(false);
           });
         }, [busqueda]); 
 
@@ -102,6 +104,7 @@ const Main=()=>{
   return(
     <div>
       <div>
+      {loading && <h1>CARGANDO</h1>}
         <h2>Personaje buscado: {valorDelInput}</h2>
         <input onChange={handleChange}></input>
         <button onClick={handleClick}>Search</button>
